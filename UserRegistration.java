@@ -31,5 +31,13 @@ public class UserRegistration
     else{
       System.out.println("Invalid Last Name");
     }
+    System.out.print("Email: ");
+    String email = sc.nextLine();
+    if(util.match(email, UserRegistrationUtil.EMAIL_PATTERN)){
+      System.out.println("Valid Email");
+    }
+    else{
+      System.out.println("Invalid Email");
+    }
   }
 }
