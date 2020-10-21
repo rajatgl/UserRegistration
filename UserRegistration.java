@@ -49,5 +49,13 @@ public class UserRegistration
     else{
       System.out.println("Invalid Phone");
     }
+    System.out.print("Password: ");
+    String password = sc.nextLine();
+    if(util.match(password, UserRegistrationUtil.PASSWORD_PATTERN)){
+      System.out.println("Valid Password");
+    }
+    else{
+      System.out.println("Invalid Password");
+    }
   }
 }
