@@ -6,96 +6,96 @@ public class UserRegistrationValidationTest {
     // Validation Test for First name
     @Test
     public void givenFirstName_IfValid_ShouldReturnTrue() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("Rajat",UserRegistrationUtil.FIRST_NAME_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.firstNameValidator.match("Rajat");
         Assert.assertEquals(true,result);
     }
     @Test
     public void givenFirstName_IfValid_ShouldReturnTrue1() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("Rakshit",UserRegistrationUtil.FIRST_NAME_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.firstNameValidator.match("Rakshit");
         Assert.assertEquals(true,result);
     }
     @Test
-    public void givenFirstName_IfValid_ShouldReturnTrue2() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("Prabh",UserRegistrationUtil.FIRST_NAME_PATTERN);
-        Assert.assertEquals(true,result);
+    public void givenFirstName_IfNotValid_ShouldReturnFalse() {
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.firstNameValidator.match("PrabhaL");
+        Assert.assertEquals(false,result);
     } 
     //Testing  Last name validation
     @Test
     public void givenLastName_IfValid_ShouldReturnTrue() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("Gundi",UserRegistrationUtil.LAST_NAME_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.lastNameValidator.match("Gundi");
         Assert.assertEquals(true,result);
     }
     @Test
     public void givenLastName_IfValid_ShouldReturnTrue1() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("Grk",UserRegistrationUtil.LAST_NAME_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.lastNameValidator.match("Rajat");
         Assert.assertEquals(true,result);
     }
     @Test
-    public void givenLastName_IfValid_ShouldReturnTrue2() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("Labrador",UserRegistrationUtil.LAST_NAME_PATTERN);
-        Assert.assertEquals(true,result);
+    public void givenLastName_IfNotValid_ShouldReturnFalse() {
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.lastNameValidator.match("gundi");
+        Assert.assertEquals(false,result);
     }
     // Validation Testing for Email Id
     @Test
     public void givenEmail_IfValid_ShouldReturnTrue() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("glrajat@gmail.com",UserRegistrationUtil.EMAIL_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.emailValidator.match("glrajat@gmail.com");
         Assert.assertEquals(true,result);
     }
     @Test
     public void givenEmail_IfValid_ShouldReturnTrue1() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("glshitkar@gscore.eu",UserRegistrationUtil.EMAIL_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.emailValidator.match("raksh@mani.edu.in");
         Assert.assertEquals(true,result);
     }
     @Test
-    public void givenEmail_IfValid_ShouldReturnTrue2() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("prab@gmail.co.in",UserRegistrationUtil.EMAIL_PATTERN);
-        Assert.assertEquals(true,result);
+    public void givenEmail_IfNotValid_ShouldReturnFalse() {
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.emailValidator.match("Rajat");
+        Assert.assertEquals(false,result);
     }
     // Validation Test for Mobile Pattern
     @Test
     public void givenPhoneNumber_IfValid_ShouldReturnTrue() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("091 8496942482",UserRegistrationUtil.PHONE_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.phoneValidator.match("091 8496942482");
         Assert.assertEquals(true,result);
     }
     @Test
     public void givenPhoneNumber_IfValid_ShouldReturnTrue1() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("123 1273476811",UserRegistrationUtil.PHONE_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.phoneValidator.match("912 6005008200");
         Assert.assertEquals(true,result);
     }
     @Test
-    public void givenPhoneNumber_IfValid_ShouldReturnTrue2() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("1234 1273476811",UserRegistrationUtil.PHONE_PATTERN);
+    public void givenPhoneNumber_IfNotValid_ShouldReturnFalse() {
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.phoneValidator.match("300700600");
         Assert.assertEquals(false,result);
     }
     // Validation Test for Password
     @Test
     public void givenPassword_IfValid_ShouldReturnTrue() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("Rajat@420",UserRegistrationUtil.PASSWORD_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.passwordValidator.match("Rajat@$20");
         Assert.assertEquals(true,result);
     }
     @Test
     public void givenPassword_IfNotValid_ShouldReturnFalse() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("RABDA123",UserRegistrationUtil.PASSWORD_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.passwordValidator.match("Rajat");
         Assert.assertEquals(false,result);
     }  
     @Test
     public void givenPassword_IfNotValid_ShouldReturnFalse1() {
-    	UserRegistrationUtil userValidator = new UserRegistrationUtil();
-        boolean result = userValidator.match("rajat@420",UserRegistrationUtil.PASSWORD_PATTERN);
+    	UserRegistrationValidation validation = new UserRegistrationValidation();
+        boolean result = validation.passwordValidator.match("rajat@$20");
         Assert.assertEquals(false,result);
     }  
 }
